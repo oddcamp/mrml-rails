@@ -18,4 +18,34 @@ class MrmlTestMailer < ActionMailer::Base
       format.mjml { render 'normal_email' }
     end
   end
+
+  def partial_email(username)
+    @username = username
+    
+    mail to: 'user@example.org', subject: 'Welcome!' do |format|
+      format.mjml { render 'partial_email' }
+    end
+  end
+end
+
+class MrmlLayoutTestMailer < ActionMailer::Base
+  layout 'mailer'
+
+  default from: 'example@mailer.com'
+
+  def normal_email(username)
+    @username = username
+    
+    mail to: 'user@example.org', subject: 'Welcome!' do |format|
+      format.mjml { render 'normal_email' }
+    end
+  end
+
+  def partial_email(username)
+    @username = username
+    
+    mail to: 'user@example.org', subject: 'Welcome!' do |format|
+      format.mjml { render 'partial_email' }
+    end
+  end
 end
