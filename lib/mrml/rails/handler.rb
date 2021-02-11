@@ -20,7 +20,11 @@ module Mrml
             template_handler.call(template)
         end
 
-        "MRML.to_html(begin;#{compiled_source};end).html_safe"
+        if compiled_source =~ /<mjml.*?>/i
+          "MRML.to_html(begin;#{compiled_source};end).html_safe"
+        else
+          compiled_source
+        end
       end
     end
   end
