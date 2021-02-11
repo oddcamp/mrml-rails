@@ -1,0 +1,9 @@
+<mj-section>
+  <%= render 'user_header' %>
+</mj-section>
+<mj-section>
+  <mj-column>
+    <h2>We inform you about something</h2>
+    <p>Please visit <a href="https://www.example.com">this link</a></p>
+  </mj-column>
+</mj-section>

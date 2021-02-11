@@ -1,0 +1,3 @@
+<mj-column>
+  <mj-text>Welcome, <%= @username %>!</mj-text>
+</mj-column>
