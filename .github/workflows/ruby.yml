@@ -1,0 +1,78 @@
+---
+name: ci
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    name: ruby
+    runs-on: ubuntu-latest
+
+    services:
+      # redis:
+      #   image: redis
+      #   ports:
+      #     - 6379:6379
+      #   options: >-
+      #     --health-cmd "redis-cli ping"
+      #     --health-interval 10s
+      #     --health-timeout 5s
+      #     --health-retries 5
+      elasticsearch:
+        image: elasticsearch:6.8.5
+        ports:
+        - 9200:9200
+        options: >-
+          -e="discovery.type=single-node"
+          --health-cmd="curl http://localhost:9200/_cluster/health"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: postgres
+        ports:
+        - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - name: Read .tool-versions
+      uses: marocchino/tool-versions-action@v1
+      id: versions
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+    - uses: hecrj/setup-rust-action@v1
+      with:
+        rust-version: ${{ steps.versions.outputs.rust}}
+    - name: Cache gems
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('.tool-versions') }}-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-${{ hashFiles('.tool-versions') }}-${{ hashFiles('**/Gemfile.lock') }}
+    - name: Run yarn
+      run: yarn
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
+      env:
+        RAILS_ENV: test
+    - name: Run tests
+      run: bundle exec rake spec
+      env:
+        RAILS_ENV: test
