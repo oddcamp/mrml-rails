@@ -20,7 +20,8 @@ jobs:
       id: versions
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
-    - uses: hecrj/setup-rust-action@v1
+    - name: Set up Rust
+      uses: hecrj/setup-rust-action@v1
       with:
         rust-version: ${{ steps.versions.outputs.rust}}
     - name: Cache gems
