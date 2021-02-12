@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO
+All you need to do is tag have the file extension `mjml` on the specific views.
 
 ## Development
 
@@ -29,7 +29,6 @@ TODO
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/oddcamp/mrml-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/oddcamp/mrml-rails/blob/master/CODE_OF_CONDUCT.md).
-
 
 ## License
 
