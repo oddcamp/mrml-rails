@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-All you need to do is tag have the file extension `mjml` on the specific views.
+All you need to do is to have the file extension `mjml` on the specific views.
+
+I.e.: `sign_up.html.mjml`, `sign_up.mjml`
 
 ## Development
 
