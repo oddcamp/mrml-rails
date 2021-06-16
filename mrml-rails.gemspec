@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.metadata['changelog_uri'] = 'https://github.com/oddcamp/mrml-rails/releases'
 
   spec.add_runtime_dependency 'actionmailer', '>= 3.1'
-  spec.add_runtime_dependency 'mrml', '>= 0.2', '< 0.5'
+  spec.add_runtime_dependency 'mrml', '>= 0.2', '< 0.6'
   spec.add_runtime_dependency 'railties', '>= 3.1'
   spec.add_development_dependency 'rspec', '~> 3.10'
   spec.add_development_dependency 'rspec-rails', '>= 4.0.2', '~> 5.0'
