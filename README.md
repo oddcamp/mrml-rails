@@ -28,6 +28,10 @@ I.e.: `sign_up.html.mjml`, `sign_up.mjml`
 
 TODO
 
+## Heroku Rust Setup
+
+TODO
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/oddcamp/mrml-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/oddcamp/mrml-rails/blob/master/CODE_OF_CONDUCT.md).
