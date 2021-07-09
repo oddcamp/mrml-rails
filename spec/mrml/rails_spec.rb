@@ -18,7 +18,7 @@ RSpec.describe Mrml::Rails, type: :mailer do
     
       it "renders the body" do
         expect(mail.body.raw_source).not_to match(%r{</?mj.+?>})
-        expect(mail.body.raw_source).to match(/<body>/)
+        expect(mail.body.raw_source).to match(/<body/)
         expect(mail.body.raw_source).to match(/Welcome, Random User!/)
         expect(mail.body.raw_source).to match(%r{<h2>We inform you about something</h2>})
         expect(mail.body.raw_source).to match(%r{<a href="https://www.example.com">this link</a>})
@@ -41,7 +41,7 @@ RSpec.describe Mrml::Rails, type: :mailer do
     
       it "renders the body" do
         expect(mail.body.raw_source).not_to match(%r{</?mj.+?>})
-        expect(mail.body.raw_source).to match(/<body>/)
+        expect(mail.body.raw_source).to match(/<body/)
         expect(mail.body.raw_source).to match(/Welcome, Random User!/)
         expect(mail.body.raw_source).to match(%r{<h2>We inform you about something</h2>})
         expect(mail.body.raw_source).to match(%r{<a href="https://www.example.com">this link</a>})
@@ -65,7 +65,7 @@ RSpec.describe Mrml::Rails, type: :mailer do
     
       it "renders the body" do
         expect(mail.body.raw_source).not_to match(%r{</?mj.+?>})
-        expect(mail.body.raw_source).to match(/<body>/)
+        expect(mail.body.raw_source).to match(/<body/)
         expect(mail.body.raw_source).to match(/Welcome, Random User!/)
         expect(mail.body.raw_source).to match(%r{<h2>We inform you about something</h2>})
         expect(mail.body.raw_source).to match(%r{<a href="https://www.example.com">this link</a>})
@@ -88,7 +88,7 @@ RSpec.describe Mrml::Rails, type: :mailer do
     
       it "renders the body" do
         expect(mail.body.raw_source).not_to match(%r{</?mj.+?>})
-        expect(mail.body.raw_source).to match(/<body>/)
+        expect(mail.body.raw_source).to match(/<body/)
         expect(mail.body.raw_source).to match(/Welcome, Random User!/)
         expect(mail.body.raw_source).to match(%r{<h2>We inform you about something</h2>})
         expect(mail.body.raw_source).to match(%r{<a href="https://www.example.com">this link</a>})
