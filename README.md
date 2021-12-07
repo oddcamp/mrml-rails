@@ -26,11 +26,21 @@ I.e.: `sign_up.html.mjml`, `sign_up.mjml`
 
 ## Development
 
-TODO
+1. Setup the tools with: `asdf install` (make sure you have the Ruby and Rust asdf plugins installed)
+2. Run `bundle install`
+3. For rspec run: `bundle exec rspec`
 
 ## Heroku Rust Setup
 
-TODO
+1. Add the rust buildpack to the app (and app.json): `https://buildpack-registry.s3.amazonaws.com/buildpacks/emk/rust.tgz`
+2. Add a RustConfig with:
+
+```
+VERSION=1.57.0
+RUST_SKIP_BUILD=1
+```
+
+3. Deploy
 
 ## Contributing
 
