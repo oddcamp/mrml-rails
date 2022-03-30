@@ -3,7 +3,7 @@ PATH
   specs:
     mrml-rails (0.2.0)
       actionmailer (>= 3.1)
-      mrml (>= 0.2, < 0.8)
+      mrml (>= 0.2, < 0.9)
       railties (>= 3.1)
 
 GEM
@@ -56,7 +56,7 @@ GEM
     mini_portile2 (2.4.0)
     minitar (0.9)
     minitest (5.15.0)
-    mrml (0.7.0)
+    mrml (0.8.0)
       ffi
       thermite
     nokogiri (1.10.10)
