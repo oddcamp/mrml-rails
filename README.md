@@ -22,7 +22,7 @@ Or install it yourself as:
 
 All you need to do is to have the file extension `mjml` on the specific views.
 
-I.e.: `sign_up.html.mjml`, `sign_up.mjml`
+I.e.: `sign_up.mjml`, `notification.mjml`
 
 ## Development
 
