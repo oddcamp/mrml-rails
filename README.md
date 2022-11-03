@@ -36,7 +36,7 @@ I.e.: `sign_up.mjml`, `notification.mjml`
 2. Add a RustConfig with:
 
 ```
-VERSION=1.57.0
+VERSION=1.65.0
 RUST_SKIP_BUILD=1
 ```
 
