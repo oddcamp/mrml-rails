@@ -2,6 +2,8 @@
 
 `mrml-rails` is a ActionMailer templating engine that uses the Rust-based MRML compiler in order to compile MJML files into pure HTML.
 
+**Minimum Rust version supported is `1.51.0`**
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -36,7 +38,7 @@ I.e.: `sign_up.mjml`, `notification.mjml`
 2. Add a RustConfig with:
 
 ```
-VERSION=1.57.0
+VERSION=1.65.0
 RUST_SKIP_BUILD=1
 ```
 

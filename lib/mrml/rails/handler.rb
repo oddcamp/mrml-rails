@@ -21,7 +21,8 @@ module Mrml
         end
 
         if compiled_source =~ /<mjml.*?>/i
-          "MRML.to_html(begin;#{compiled_source};end).html_safe"
+          # "MRML.to_html(begin;#{compiled_source};end).html_safe"
+          "MRML::Template.new(begin;#{compiled_source};end).to_html"
         else
           compiled_source
         end
